@@ -5,12 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.galangaji.bukuwarungassignment.data.db.entities.User
-import com.galangaji.bukuwarungassignment.data.repositories.UserRepositoryImpl
+import com.galangaji.bukuwarungassignment.data.repositories.UserRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class HomeViewModel(private val repository: UserRepositoryImpl) : ViewModel() {
+class HomeViewModel(private val repository: UserRepository) : ViewModel() {
 
 
     private val mShowLoading = MutableLiveData<Boolean>()

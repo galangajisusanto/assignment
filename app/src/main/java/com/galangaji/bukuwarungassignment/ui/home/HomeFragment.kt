@@ -12,6 +12,7 @@ import com.galangaji.bukuwarungassignment.R
 import com.galangaji.bukuwarungassignment.data.db.AppDatabase
 import com.galangaji.bukuwarungassignment.data.network.MyApi
 import com.galangaji.bukuwarungassignment.data.network.NetworkConnectionInterceptor
+import com.galangaji.bukuwarungassignment.data.repositories.UserRepository
 import com.galangaji.bukuwarungassignment.data.repositories.UserRepositoryImpl
 import com.galangaji.bukuwarungassignment.ui.details.UserDetailsActivity
 import com.galangaji.bukuwarungassignment.ui.home.adapter.UserAdapter
@@ -25,7 +26,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var factory: HomeViewModelFactory
 
-    private lateinit var repository: UserRepositoryImpl
+    private lateinit var repository: UserRepository
 
     private lateinit var api: MyApi
 
