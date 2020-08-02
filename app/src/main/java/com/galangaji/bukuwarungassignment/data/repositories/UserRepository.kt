@@ -9,5 +9,4 @@ interface UserRepository {
     suspend fun fetchUsers(): UseCaseResult<UserResponse>
     suspend fun getUsers(): LiveData<List<User>>
     fun saveUsers(users: List<User>)
-
 }

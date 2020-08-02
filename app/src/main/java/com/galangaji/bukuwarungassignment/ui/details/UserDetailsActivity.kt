@@ -28,6 +28,10 @@ class UserDetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_details)
+
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayShowHomeEnabled(true)
+
         user = intent.getParcelableExtra(USER_DATA)
 
         setView(user)
@@ -42,5 +46,10 @@ class UserDetailsActivity : AppCompatActivity() {
             .into(img_avatar)
         txt_name.text = "${user.firstName} ${user.lastName}"
         txt_email.text = user.email
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
