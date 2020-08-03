@@ -12,6 +12,8 @@ import com.galangaji.bukuwarungassignment.data.db.AppDatabase
 import com.galangaji.bukuwarungassignment.data.db.entities.Profile
 import com.galangaji.bukuwarungassignment.data.repositories.ProfileRepository
 import com.galangaji.bukuwarungassignment.data.repositories.ProfileRepositoryImpl
+import com.galangaji.bukuwarungassignment.utils.hide
+import com.galangaji.bukuwarungassignment.utils.show
 import kotlinx.android.synthetic.main.profile_fragment.*
 
 class ProfileFragment : Fragment() {
@@ -61,7 +63,7 @@ class ProfileFragment : Fragment() {
     private fun initViewModel() {
 
         viewModel.showLoading.observe(viewLifecycleOwner, Observer { showLoading ->
-            progress_bar.visibility = if (showLoading) View.VISIBLE else View.GONE
+            if (showLoading) progress_bar.show() else progress_bar.hide()
         })
 
         viewModel.emptyProfile.observe(viewLifecycleOwner, Observer { isProfileEmpty ->
@@ -91,7 +93,7 @@ class ProfileFragment : Fragment() {
     }
 
     private fun setView(profile: Profile) {
-        txt_name.text = "${profile.firstName} ${profile.lastName}"
+        txt_name.text = getString(R.string.full_name, profile.firstName, profile.lastName)
         txt_email.text = profile.email
     }
 

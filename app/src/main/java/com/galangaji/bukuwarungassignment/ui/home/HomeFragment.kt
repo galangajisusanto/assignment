@@ -16,6 +16,8 @@ import com.galangaji.bukuwarungassignment.data.repositories.UserRepository
 import com.galangaji.bukuwarungassignment.data.repositories.UserRepositoryImpl
 import com.galangaji.bukuwarungassignment.ui.details.UserDetailsActivity
 import com.galangaji.bukuwarungassignment.ui.home.adapter.UserAdapter
+import com.galangaji.bukuwarungassignment.utils.hide
+import com.galangaji.bukuwarungassignment.utils.show
 import com.galangaji.bukuwarungassignment.utils.toast
 import kotlinx.android.synthetic.main.home_fragment.*
 
@@ -89,7 +91,7 @@ class HomeFragment : Fragment() {
         })
 
         viewModel.showLoading.observe(viewLifecycleOwner, Observer { showLoading ->
-            progress_bar.visibility = if (showLoading) View.VISIBLE else View.GONE
+            if (showLoading) progress_bar.show() else progress_bar.hide()
         })
 
         viewModel.errorMessage.observe(viewLifecycleOwner, Observer { showError ->

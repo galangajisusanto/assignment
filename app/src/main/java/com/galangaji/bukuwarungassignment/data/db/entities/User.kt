@@ -6,7 +6,6 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
-
 @Parcelize
 @Entity
 data class User(
@@ -18,5 +17,4 @@ data class User(
     @SerializedName("last_name")
     val lastName: String = "",
     val avatar: String = ""
-) : Parcelable {
-}
+) : Parcelable

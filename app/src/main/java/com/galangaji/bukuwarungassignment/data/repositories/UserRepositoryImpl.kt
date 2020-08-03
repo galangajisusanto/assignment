@@ -32,7 +32,7 @@ class UserRepositoryImpl(
 
     override suspend fun fetchUsers(): UseCaseResult<UserResponse> {
         return try {
-            var result = apiRequest { api.getUsers() }
+            val result = apiRequest { api.getUsers() }
             UseCaseResult.Success(result)
         } catch (ex: ApiException) {
             UseCaseResult.Error(ex)

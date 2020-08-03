@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Buku Warung Assignment</string>
+    <string name="profile_message_empty">Your Profile is Empty</string>
+    <string name="edit_your_profile">edit your profile</string>
+    <string name="add_your_profile">add your profile</string>
+    <string name="profile">Profile</string>
+    <string name="home">Home</string>
+    <string name="full_name">%s %s</string>
 </resources>

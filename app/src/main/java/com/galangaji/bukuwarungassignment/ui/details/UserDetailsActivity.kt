@@ -44,7 +44,7 @@ class UserDetailsActivity : AppCompatActivity() {
             .centerCrop()
             .thumbnail()
             .into(img_avatar)
-        txt_name.text = "${user.firstName} ${user.lastName}"
+        txt_name.text = getString(R.string.full_name, user.firstName, user.lastName)
         txt_email.text = user.email
     }
 
